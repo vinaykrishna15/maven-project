@@ -1,9 +1,11 @@
 pipeline {
+    environment {
+    PATH = "C:\\Program Files\\Git\\usr\\bin; C:\\Program Files\\Git\\bin;${env.PATH}"
     agent any
     stages{
         stage('Build'){
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
             post {
                 success{
